@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Game Of Chance</title>
+      <style>
+      body{
+        margin: 0;
+      }
+        h1{
+          text-align: center;
+          background-color: skyblue;
+          padding: 20px;
+          margin-top: 0;
+
+        }
+
+        p{
+          text-align: center;
+          font-size: 20px;
+        }
+
+        #number{
+          margin-left: 640px;
+        }
+
+        #generate{
+          margin-left: 660px;
+          padding: 10px;
+        }
+
+        #display{
+          margin-top:50px;
+          font-size: 200px;
+          background: gold;
+        }
+      </style>
+
+      <script>
+        function random(){
+          var difficulty = document.getElementById("number").value;
+          var i = Math.floor(Math.random() * difficulty);
+          var j = Math.floor(Math.random() * difficulty);
+          if (i === j) {
+            document.getElementById("display").innerHTML = "Win";
+          }else {
+            document.getElementById("display").innerHTML = "Lose";
+          }
+        }
+
+      </script>
+  </head>
+  <body>
+    <h1>Game Of Chance</h1>
+    <p>Put a number in the foloowing text-box (number should be between 2 and 10)<br>
+       if the number you choose is close to 10, the chance of the win is harder.
+    </p>
+    <br>
+    <input type="text" id="number">
+    <br><br><br>
+    <button id="generate" onclick="random()">WIN OR LOSE</button>
+    <p id="display">Result</p>
+  </body>
+</html>
